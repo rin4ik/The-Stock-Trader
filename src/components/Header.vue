@@ -1,30 +1,34 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-<router-link class="navbar-brand"  to='/'>Stock Trader</router-link>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <router-link to="/portfolio" class="nav-item" tag="li" active-class="active"><a class="nav-link">Portfolio</a></router-link>
-      <router-link to="/stocks" tag="li" class="nav-item" active-class="active"><a class="nav-link">Stocks</a></router-link>
-   </ul>
-   <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item"><a class="nav-link" href="#">End Day</a></li>
-      
-       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Save & Load
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li>
-          <a class="dropdown-item" href="#">Save Data</a>
-        </li>  
-        <li> 
-                  <a class="dropdown-item" href="#">Load Data</a>
- 
-        </li>
- 
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+     <router-link to="/" class="navbar-brand">Stock Trader</router-link>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+     <router-link to="/portfolio" active-class="active" tag="li"><a>Portfolio</a></router-link>
+     <router-link to="/stocks" active-class="active" tag="li"><a>Stocks</a></router-link>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
         </div>
-      </li>
-   </ul>
-  </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">End Day</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Save & Load <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Save Data</a></li>
+            <li><a href="#">Load Data</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
 </template>
