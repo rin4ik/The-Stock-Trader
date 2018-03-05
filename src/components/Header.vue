@@ -12,12 +12,7 @@
      <router-link to="/portfolio" active-class="active" tag="li"><a>Portfolio</a></router-link>
      <router-link to="/stocks" active-class="active" tag="li"><a>Stocks</a></router-link>
       </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+    
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">End Day</a></li>
         <li class="dropdown">
