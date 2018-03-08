@@ -14,7 +14,7 @@
               placeholder="Quantinty"
               v-model="quantity">
           </div>
-          <div class="pull-right"><button class="btn btn-success" @click="sellStock" :disabled="quantity <= 0">Sell</button></div>
+          <div class="pull-right"><button class="btn btn-info" @click="sellStock" :disabled="quantity <= 0">Sell</button></div>
         </div>
     </div>
   </div>
@@ -29,14 +29,15 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["sellStock"]),
+    ...mapActions({ placeSellStock: "sellStock" }),
     sellStock() {
       const order = {
         stockId: this.stock.id,
         stockPrice: this.stock.price,
         quantity: this.quantity
       };
-      this.sellStock();
+      this.placeSellStock(order);
+      this.quantity = 0;
     }
   }
 };
