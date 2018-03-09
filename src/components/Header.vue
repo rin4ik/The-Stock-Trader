@@ -19,8 +19,8 @@
          @mouseout="isDropdownOpen = false">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Save & Load <span class="caret"></span></a>
           <ul class="dropdown-menu"   >
-            <li class="dropdown-item"><a href="#">Save Data</a></li>
-            <li class="dropdown-item"><a href="#">Load Dat/a</a></li>
+            <li class="dropdown-item"><a href="#" @click="saveData">Save Data</a></li>
+            <li class="dropdown-item"><a href="#" @click="loadData">Load Dat/a</a></li>
           </ul>
         </li>
       </ul>
@@ -46,6 +46,17 @@ export default {
     ...mapActions(["randomizeStocks"]),
     endDay() {
       this.randomizeStocks();
+    },
+    saveData() {
+      const data = {
+        funds: this.$store.getters.funds,
+        stockPortfolio: this.$store.getters.stockPortfolio,
+        stocks: this.$store.getters.stocks
+      };
+      this.$http.put("data.json", data);
+    },
+    loadData(){
+      
     }
   }
 };
